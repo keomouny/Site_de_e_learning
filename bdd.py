@@ -1,4 +1,5 @@
 import psycopg2
+import psycopg2.extras
 import logging
 from main import *
 import time
@@ -35,7 +36,8 @@ class BDD():
             exit()
 
     def select_from_db(self):
-        self.mycursor = self.mydb.cursor()
+        self.mycursor = self.mydb.cursor(
+            cursor_factory=psycopg2.extras.DictCursor)
         self.query_specify = 'SELECT * FROM data_video;'
         logger.info('hello')
         self.mycursor.execute(self.query_specify)
@@ -43,13 +45,13 @@ class BDD():
         dict_result = []
         for i in result:
             dict_single_result = {}
-            dict_single_result['id'] = i[0]
-            dict_single_result['lien'] = i[1]
-            dict_single_result['titre'] = i[2]
-            dict_single_result['videaste'] = i[3]
-            dict_single_result['duree'] = i[4]
-            dict_single_result['vue'] = i[5]
-            dict_single_result['theme'] = i[6]
+            dict_single_result['id'] = i['id']
+            dict_single_result['lien'] = i['lien']
+            dict_single_result['titre'] = i['titre']
+            dict_single_result['videaste'] = i['videaste']
+            dict_single_result['duree'] = i['duree']
+            dict_single_result['vue'] = i['vue']
+            dict_single_result['theme'] = i['theme']
             dict_result.append(dict_single_result)
         return dict_result
 
