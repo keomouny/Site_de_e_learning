@@ -1,21 +1,20 @@
 version: "3.9"
 services:
   db:
-    image: mysql
+    image: postgres
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data:/var/lib/postgres
     restart: always
     environment:
-      - MYSQL_DATABASE=e_learning_db
-      - MYSQL_USER=toto
-      - MYSQL_PASSWORD=pwd
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - POSTGRES_DATABASE=postgres
+      - POSTGRES_USER=mouny@mouny-test-db
+      - POSTGRES_PASSWORD=admin_part_1
     ports:
-      - 3306:3306
+      - 5432:5234
   app:
     restart: always
     build: .
-    image: e_learning_project:1.0
+    image: e_learning_postgres
     ports:
       - 5000:5000
     environment:

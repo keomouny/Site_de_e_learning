@@ -31,7 +31,9 @@ def insert_data():
     global message
     db_learn = BDD()
     try:
-        db_learn.insert_data(DataVideo().data)
+        datatoto = DataVideo().data
+        db_learn.insert_data(datatoto)
+        logger.info(datatoto)
         message = 'SUCCESS'
     except:
         print('impossible to insert data')
