@@ -15,7 +15,7 @@ class BDD():
         self.query_specify = None
         self.mydb = psycopg2.connect(
             host="mouny-db.postgres.database.azure.com",
-            dbname="postgres",
+            dbname="db_e_learning",
             user="mouny@mouny-db",
             password="admin_part_1",
             sslmode="require"

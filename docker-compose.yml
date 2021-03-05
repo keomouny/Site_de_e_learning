@@ -6,7 +6,7 @@ services:
       - db_data:/var/lib/postgres
     restart: always
     environment:
-      - POSTGRES_DATABASE=postgres
+      - POSTGRES_DATABASE=db_e_learning
       - POSTGRES_USER=mouny@mouny-db
       - POSTGRES_PASSWORD=admin_part_1
     ports:
