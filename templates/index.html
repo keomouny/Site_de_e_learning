@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+{% block title %}CloudAcademy{% endblock title %}
+{% block content %}
+        <section class="info">
+            <div class="container sloggan" id="home">
+                <h1>Want to learn how to be an amazing cloud developer ? 
+                    Here is the place to be !</h1>
+            </div>  
+            <div id="icon">
+                <i data-theme="python" class="main_icon fab fa-python"></i></i>
+                <i data-theme="javascript" class="main_icon fab fa-js-square"></i>
+                <i data-theme="docker" class="main_icon fab fa-docker"></i>
+                <i data-theme="all" class="main_icon fab fa-amilia"></i>
+            </div>
+        </section>
+    <div class="main_container">
+        <div class="video_link"></div>
+        <div class="video_link"></div>
+        <div class="video_link"></div>
+        <div class="video_link"></div>
+        <div class="video_link"></div>
+        <div class="video_link"></div>
+        <div class="video_link"></div>
+        <div class="video_link"></div>
+        <div class="video_link"></div>
+    </div>
+{% endblock content %}
+{% block js %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock js %}
+
