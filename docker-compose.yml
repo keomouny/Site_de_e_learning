@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       - POSTGRES_DATABASE=postgres
-      - POSTGRES_USER=mouny@mouny-test-db
+      - POSTGRES_USER=mouny@mouny-db
       - POSTGRES_PASSWORD=admin_part_1
     ports:
       - 5432:5234

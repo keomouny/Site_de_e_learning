@@ -14,9 +14,9 @@ class BDD():
         time.sleep(1)
         self.query_specify = None
         self.mydb = psycopg2.connect(
-            host="mouny-test-db.postgres.database.azure.com",
+            host="mouny-db.postgres.database.azure.com",
             dbname="postgres",
-            user="mouny@mouny-test-db",
+            user="mouny@mouny-db",
             password="admin_part_1",
             sslmode="require"
         )
