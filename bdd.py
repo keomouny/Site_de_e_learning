@@ -39,7 +39,6 @@ class BDD():
         self.mycursor = self.mydb.cursor(
             cursor_factory=psycopg2.extras.DictCursor)
         self.query_specify = 'SELECT * FROM data_video;'
-        logger.info('hello')
         self.mycursor.execute(self.query_specify)
         result = self.mycursor.fetchall()
         dict_result = []
