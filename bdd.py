@@ -3,6 +3,8 @@ import logging
 from main import *
 import time
 from setup_logger import logger
+import os
+from dotenv import load_dotenv
 
 
 class BDD():
@@ -12,13 +14,14 @@ class BDD():
 
     def __init__(self):
         time.sleep(1)
+        load_dotenv()
         self.query_specify = None
         self.mydb = mysql.connector.connect(
-            host="db",
-            user="toto",
+            host=os.environ.get('MYSQL_HOST'),
+            user=os.environ.get('MYSQL_USER'),
             port=3306,
-            database="e_learning_db",
-            password="pwd",
+            database=os.environ.get('MYSQ_DBNAME'),
+            password=os.environ.get('MYSQL_PASSWORD'),
         )
 
     def create_table(self):
