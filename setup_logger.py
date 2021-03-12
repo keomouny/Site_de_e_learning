@@ -1,7 +1,6 @@
 import logging
-import os
 
-logging.basicConfig(filename=f"{os.getcwd()}/logs/log.log", filemode="w",
+logging.basicConfig(filename="logs/log.log", filemode="w",
                     format="%(asctime)s - %(levelname)-8s - %(message)s", datefmt="%d/%m/%Y %H:%M:%S", level=logging.DEBUG)
 
 logger = logging.getLogger(__name__)

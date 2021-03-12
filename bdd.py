@@ -2,6 +2,8 @@ import psycopg2
 import psycopg2.extras
 import logging
 from main import *
+from dotenv import load_dotenv
+import os
 import time
 from setup_logger import logger
 
@@ -13,12 +15,13 @@ class BDD():
 
     def __init__(self):
         time.sleep(1)
+        load_dotenv()
         self.query_specify = None
         self.mydb = psycopg2.connect(
-            host="mouny-db.postgres.database.azure.com",
-            dbname="db_e_learning",
-            user="mouny@mouny-db",
-            password="admin_part_1",
+            host=os.environ.get('POSTGRES_HOST'),
+            dbname=os.environ.get('POSTGRES_DBNAME'),
+            user=os.environ.get('POSTGRES_USER'),
+            password=os.environ.get('POSTGRES_PASSWORD'),
             sslmode="require"
         )
 
